@@ -37,8 +37,9 @@ public class DiaryService {
     }
 
     //find All
-    public List<Diary> findAll() {
-        return diaryRepository.findAll();
+    public List<Diary> findAll(Long userId) {
+
+        return diaryRepository.findByUserId(userId);
     }
 
     //find By Id
