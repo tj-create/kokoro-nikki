@@ -3,7 +3,6 @@ package com.kokoronikki.kokoronikki.controller;
 import com.kokoronikki.kokoronikki.controller.dto.DiaryRequestDto;
 import com.kokoronikki.kokoronikki.controller.dto.DiaryResponseDto;
 import com.kokoronikki.kokoronikki.domain.Diary;
-import com.kokoronikki.kokoronikki.service.CustomUserDetails;
 import com.kokoronikki.kokoronikki.service.DiaryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
