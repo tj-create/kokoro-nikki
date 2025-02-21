@@ -3,7 +3,6 @@ package com.kokoronikki.kokoronikki.controller;
 import com.kokoronikki.kokoronikki.controller.dto.DiaryRequestDto;
 import com.kokoronikki.kokoronikki.controller.dto.DiaryResponseDto;
 import com.kokoronikki.kokoronikki.domain.Diary;
-import com.kokoronikki.kokoronikki.service.CustomUserDetails;
 import com.kokoronikki.kokoronikki.service.DiaryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -36,7 +35,7 @@ public class DiaryController {
     //일기 목록 조회: GET /api/diaries
     @GetMapping
     public ResponseEntity<List<DiaryResponseDto>> getDiaries() {
-        List<DiaryResponseDto> collect = diaryService.findAll().stream()
+        List<DiaryResponseDto> collect = diaryService.findAll(getCurrentUserId()).stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
 
