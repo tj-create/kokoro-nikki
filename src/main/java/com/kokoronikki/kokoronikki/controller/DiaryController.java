@@ -35,6 +35,7 @@ public class DiaryController {
     //일기 목록 조회: GET /api/diaries
     @GetMapping
     public ResponseEntity<List<DiaryResponseDto>> getDiaries() {
+        log.info("findALl 실행");
         List<DiaryResponseDto> collect = diaryService.findAll(getCurrentUserId()).stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
